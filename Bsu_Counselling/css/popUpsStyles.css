@@ -1,0 +1,50 @@
+#pop{
+                     text-shadow:none; margin: 0 auto; height:65%; width:77.8%;bottom: 50%;right: 10.5%; top: 27%; position: fixed; padding: 10px;
+/*                     border:1px dashed;*/
+                     visibility: hidden;  background-color:white;  border-radius: 0em; box-shadow: 5px 5px 5px  dimgray;
+                 }
+                 #tab{
+                     background-color:  lightgrey; width: 48%; border-radius: 1em 0em 0em 0em; float: left;   box-shadow: -5px 0px 5px  dimgray;
+                 }
+                 #tab table{
+                     width: 99%;
+                 }
+                 #tab table th{
+                     background-color:lightblue;   color:white;
+                 }
+                 #tabl{
+                     background-color:  lightgrey; width: 50%;  border-radius: 0em 1em 0em 0em; float: right;
+                 }
+                 #tabl table{
+                     width: 99%; 
+                 }
+                 #tabl table th{
+                     background-color:lightblue;    color:white;  padding-bottom: 10px;
+                 }
+                 #close{
+                     right: 0px;   top: 0px;   float: right;  background-color:brown;
+                 }
+                  #about{
+                     text-shadow:none;  margin: 0 auto;    height:65%;   width:77.8%;   bottom: 50%;    right: 10.5%;   position: fixed;    padding: 10px;
+/*                     border:1px dashed;*/
+                     visibility: hidden;    background-color:white;   border-radius: 0em;   box-shadow: -5px 5px 5px  dimgray;
+                 }
+                 #tabABT{
+                     background-color:  lightgrey;   width: 95%;    border-radius: 1em 0em 0em 0em;  float: left;font-size: 16px;
+/*                     box-shadow: -5px 0px 5px  dimgray;*/
+                 }
+                 #closeABT{
+                     right: 0px;   top: 0px;     float: right;   background-color:brown;
+                 }
+                 #services{
+                     text-shadow:none;  margin: 0 auto;  height:65%; width:77.8%;  bottom: 50%;  right: 10.5%;  top: 27%;    position: fixed; padding: 10px;
+/*                     border:1px dashed;*/
+                     visibility: hidden;      background-color:white;     border-radius: 0em;    box-shadow: -5px 5px 5px  dimgray;
+                 }
+                 #tabSERV{
+                     background-color:  lightgrey;  width: 95%;   border-radius: 1em 0em 0em 0em; float: left;    font-size: 16px;
+/*                     box-shadow: -5px 0px 5px  dimgray;*/
+                 }
+                 #closeServices{
+                     right: 0px;     top: 0px;  float: right;   background-color:brown;
+                 }

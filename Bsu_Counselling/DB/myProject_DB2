@@ -1,0 +1,423 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.1.16-MariaDB
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema bsu_counselling
+--
+
+CREATE DATABASE IF NOT EXISTS bsu_counselling;
+USE bsu_counselling;
+
+--
+-- Definition of table `clients`
+--
+
+DROP TABLE IF EXISTS `clients`;
+CREATE TABLE `clients` (
+  `S/N` bigint(20) unsigned NOT NULL,
+  `fName` varchar(20) NOT NULL,
+  `mName` varchar(20) DEFAULT NULL,
+  `surname` varchar(20) NOT NULL,
+  `matNo` varchar(45) NOT NULL,
+  `dept` varchar(50) NOT NULL,
+  `level` int(3) unsigned NOT NULL DEFAULT '100',
+  `phoneNo` bigint(11) unsigned NOT NULL DEFAULT '0',
+  `sex` varchar(7) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `logoutRef` varchar(45) NOT NULL,
+  `logoutTime` varchar(45) NOT NULL,
+  PRIMARY KEY (`matNo`,`S/N`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clients`
+--
+
+/*!40000 ALTER TABLE `clients` DISABLE KEYS */;
+INSERT INTO `clients` (`S/N`,`fName`,`mName`,`surname`,`matNo`,`dept`,`level`,`phoneNo`,`sex`,`status`,`logoutRef`,`logoutTime`) VALUES 
+ (4,'Unique','','David','BSU/SC/CMP/12/168319','Computer Science',400,8164771868,'Male','offline','1611200349271','2016-11-20:03:49:am'),
+ (1,'John','Adeyi','King','Bsu/sc/cmp/12/16834','Computer science',400,8067203944,'Male','offline','1611200334181','2016-11-20:03:34:am'),
+ (2,'John','Adeyi','Isama','BSU/SC/CMP/12/16835','Computer Science',400,8067203944,'Male','offline','1611211038411','2016-11-21:10:38:am'),
+ (3,'Idoko','Kings','Ade','BSU/SC/CMP/12/16888','Agric Sc',400,9045783362,'Male','offline','1611210826192','2016-11-21:08:26:pm');
+/*!40000 ALTER TABLE `clients` ENABLE KEYS */;
+
+
+--
+-- Definition of table `counsel_session`
+--
+
+DROP TABLE IF EXISTS `counsel_session`;
+CREATE TABLE `counsel_session` (
+  `sn` int(10) unsigned NOT NULL,
+  `counsellorID` varchar(45) NOT NULL,
+  `clientID` varchar(45) NOT NULL,
+  `date` varchar(45) NOT NULL,
+  `session` varchar(45) NOT NULL,
+  `request` varchar(45) NOT NULL,
+  PRIMARY KEY (`clientID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `counsel_session`
+--
+
+/*!40000 ALTER TABLE `counsel_session` DISABLE KEYS */;
+INSERT INTO `counsel_session` (`sn`,`counsellorID`,`clientID`,`date`,`session`,`request`) VALUES 
+ (3,'BSU/STDCO/8','BSU/SC/CMP/12/168319','2016-11-20','active','no request'),
+ (1,'BSU/STDCO/8','Bsu/sc/cmp/12/16834','2016-11-15','active','no request'),
+ (4,'BSU/STDCO/8','BSU/SC/CMP/12/16835','2016-11-20','active','no request'),
+ (4,'BSU/STDCO/4','BSU/SC/CMP/12/16888','2016-11-21','active','no request');
+/*!40000 ALTER TABLE `counsel_session` ENABLE KEYS */;
+
+
+--
+-- Definition of table `counsellors`
+--
+
+DROP TABLE IF EXISTS `counsellors`;
+CREATE TABLE `counsellors` (
+  `S/N` bigint(20) unsigned NOT NULL,
+  `fName` varchar(20) NOT NULL,
+  `mName` varchar(20) DEFAULT NULL,
+  `surname` varchar(20) NOT NULL,
+  `staff_id` varchar(45) NOT NULL,
+  `specialty` text NOT NULL,
+  `sex` varchar(7) NOT NULL,
+  `image` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  PRIMARY KEY (`staff_id`,`S/N`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `counsellors`
+--
+
+/*!40000 ALTER TABLE `counsellors` DISABLE KEYS */;
+INSERT INTO `counsellors` (`S/N`,`fName`,`mName`,`surname`,`staff_id`,`specialty`,`sex`,`image`,`status`) VALUES 
+ (1,'King','','Adeyi','BSU/STDCO/1','General help','Male','profile/1477879648ous.jpg','offline'),
+ (10,'Oluwakemi ','','Ayodele-Oduola','BSU/STDCO/10','A huge lover of God and good music, Kemi is well vast in the knowledge of successful lasting solutions for marriage and she has used this knowledge in rendering relationship and marital advice & counseling via her Instagram page where she shares daily relationship & marriage tips for young couples.','Female','profile/1477939346profile.jpg','offline'),
+ (11,'Shola','','Coker','BSU/STDCO/11','Olushola is a seasoned counselling Psychologist, Chartered Personnel Manager and has her masters in Managerial Psychology. As a counsellor for over 10 years, she has developed keen interest in Human Sexuality and Emotional Intelligence. She loves helping people and is extremely passionate about God and a better Nigeria.','Female','profile/1477939401-profile.jpg','offline'),
+ (2,'Isama','','Isama','BSU/STDCO/2','Emotional Stress','Male','profile/1477879691015-movie-poster-wallpaper_','offline');
+INSERT INTO `counsellors` (`S/N`,`fName`,`mName`,`surname`,`staff_id`,`specialty`,`sex`,`image`,`status`) VALUES 
+ (3,'Isama','John','Adeyi','BSU/STDCO/3','Financial Support','Male','profile/1477879759hing.jpg','offline'),
+ (4,'Fola','Alade','Teju','BSU/STDCO/4','Tejuâ€™ is a Communication Coach & a Relationship Builder who enjoys playing the cupid arrow, and also a Career Coach with several online publications on career & resume building tips . A graduate from a prestigious private university and with several academics and professional qualifications beneath her book-worm proverbial hat, she is known for her immense expertise at giving plausible resolutions to topical issues on relationship, business communications and career building on various blogs and websites.','Female','profile/1477939051eju1.jpg','offline'),
+ (5,'Akuma','','Onyeka ','BSU/STDCO/5','Onyeka is the founder of QwikGist.com & Anozim.com & has been referred to as one of the most creative Information Technology nerds in Nigeria having graduated top of his class in India with a degree in Software Engineering. An active mentor, radio personality and customer-centric marketer, Onyeka has taken advantage of various initiatives to impact on the lives of over 10,000 youths in the last 4 years through many organizations looking for ways to inspire entrepreneurship and innovation among the youths in Nigeria today.','Male','profile/1477939103a.jpg','offline'),
+ (6,'Eniola ','','Femi-Ake','BSU/STDCO/6','Eniola, also known as The SuperSoulLifter is an experienced mental health professional with fast growing experience in Organizational and Business Psychology. She currently provides counseling and motivation voluntarily to Nigerians and beyond by writing and speaking via social media, online platforms and face-to-face.','Female','profile/1477939166a-profile.jpg','offline');
+INSERT INTO `counsellors` (`S/N`,`fName`,`mName`,`surname`,`staff_id`,`specialty`,`sex`,`image`,`status`) VALUES 
+ (7,'Segun','','Akiode','BSU/STDCO/7','Segun is a born teacher, a Chemical Engineer turned Career and Employability Coach. He has HR related experience covering talent acquisition, HR consulting and HR generalist. He has a passion for knowledge sharing; is committed to personal development and making impact in his generation. He desires to die empty with his footprint on the sand of history.','Male','profile/1477939225e-profile.jpg','offline'),
+ (8,'Ehi ','','Ade-Mabo','BSU/STDCO/8','For the past few years, she has inspired and empowered men and women all ages and walks of life to rise above their challenges and be the best they can be. Whether itâ€™s through some forms of struggle with finding your sweet spot in your purpose, relationships, finances, brand and self-esteem, or understanding that life should be more exciting that it is now, she understands you are not alone.','Female','profile/1477939266rofile.jpg','offline'),
+ (9,'Alicia','',' Ogbologugo','BSU/STDCO/9','Alicia was only 16 when she began mentoring her age mates and younger teenagers. She is a dedicated and passionate educationist and a minister of the gospel called to the children and teenagers department to guide them appropriately. She is currently working on her book for teenagers- A read into the life of 4 teenagers in the bible.','Female','profile/1477939304licia.jpg','offline');
+/*!40000 ALTER TABLE `counsellors` ENABLE KEYS */;
+
+
+--
+-- Definition of table `follow_up`
+--
+
+DROP TABLE IF EXISTS `follow_up`;
+CREATE TABLE `follow_up` (
+  `clientID` varchar(45) NOT NULL,
+  `counsellorID` varchar(45) NOT NULL,
+  `Termination_Date` varchar(45) NOT NULL,
+  PRIMARY KEY (`clientID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `follow_up`
+--
+
+/*!40000 ALTER TABLE `follow_up` DISABLE KEYS */;
+INSERT INTO `follow_up` (`clientID`,`counsellorID`,`Termination_Date`) VALUES 
+ ('BSU/SC/CMP/12/16888','BSU/STDCO/4','2016-11-21');
+/*!40000 ALTER TABLE `follow_up` ENABLE KEYS */;
+
+
+--
+-- Definition of table `group_members`
+--
+
+DROP TABLE IF EXISTS `group_members`;
+CREATE TABLE `group_members` (
+  `SN` bigint(20) unsigned NOT NULL,
+  `Fname` varchar(20) NOT NULL,
+  `mName` varchar(20) DEFAULT NULL,
+  `surname` varchar(20) NOT NULL,
+  `ID` varchar(45) NOT NULL,
+  `dept` varchar(50) NOT NULL,
+  `level` int(10) unsigned NOT NULL,
+  `sex` varchar(7) NOT NULL,
+  `groupID` varchar(45) NOT NULL,
+  PRIMARY KEY (`SN`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `group_members`
+--
+
+/*!40000 ALTER TABLE `group_members` DISABLE KEYS */;
+INSERT INTO `group_members` (`SN`,`Fname`,`mName`,`surname`,`ID`,`dept`,`level`,`sex`,`groupID`) VALUES 
+ (1,'Idoko','Kings','Ade','BSU/SC/CMP/12/16888','Agric Sc',400,'Male','grp-161121-1');
+/*!40000 ALTER TABLE `group_members` ENABLE KEYS */;
+
+
+--
+-- Definition of table `groups`
+--
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE `groups` (
+  `name` varchar(150) NOT NULL,
+  `groupID` varchar(40) NOT NULL,
+  `description` text NOT NULL,
+  `authourID` varchar(45) NOT NULL,
+  `member` int(10) unsigned NOT NULL,
+  `dateCreated` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`groupID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `groups`
+--
+
+/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` (`name`,`groupID`,`description`,`authourID`,`member`,`dateCreated`) VALUES 
+ ('kgkg','grp-161121-1','gokgol','BSU/STDCO/8',1,'2016-11-21');
+/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+
+
+--
+-- Definition of table `grp_messages`
+--
+
+DROP TABLE IF EXISTS `grp_messages`;
+CREATE TABLE `grp_messages` (
+  `sn` bigint(20) unsigned NOT NULL,
+  `sender` varchar(45) NOT NULL,
+  `message` text NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `group_id` varchar(45) NOT NULL,
+  `senderID` varchar(45) NOT NULL,
+  PRIMARY KEY (`sn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `grp_messages`
+--
+
+/*!40000 ALTER TABLE `grp_messages` DISABLE KEYS */;
+INSERT INTO `grp_messages` (`sn`,`sender`,`message`,`time`,`date`,`group_id`,`senderID`) VALUES 
+ (1,'CLIENT2','helo','09:03:am','2016-11-21','grp-161121-1','BSU/SC/CMP/12/16835'),
+ (2,'CLIENT3','howdy','07:25:pm','2016-11-21','grp-161121-1','BSU/SC/CMP/12/16888'),
+ (3,'Teju','strady','07:25:pm','2016-11-21','grp-161121-1','BSU/STDCO/4');
+/*!40000 ALTER TABLE `grp_messages` ENABLE KEYS */;
+
+
+--
+-- Definition of table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
+  `SN` bigint(20) unsigned NOT NULL,
+  `clientID` varchar(45) NOT NULL,
+  `counsellorID` varchar(45) NOT NULL,
+  `message` text NOT NULL,
+  `messageID` varchar(45) NOT NULL,
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  `time` varchar(20) DEFAULT NULL,
+  `sender` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  PRIMARY KEY (`messageID`,`SN`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messages`
+--
+
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (1,'Bsu/sc/cmp/12/16834','BSU/STDCO/10','hi','MSG/1','2016-11-03','09:34:pm','counsellor','read'),
+ (10,'BSU/SC/CMP/12/16835','BSU/STDCO/8','helo sir','MSG/10','2016-11-14','04:06:am','client','read'),
+ (11,'BSU/SC/CMP/12/16835','BSU/STDCO/8','helo sir','MSG/11','2016-11-14','04:08:am','client','read'),
+ (12,'BSU/SC/CMP/12/16835','BSU/STDCO/8','helo dear','MSG/12','2016-11-14','04:12:am','counsellor','read'),
+ (13,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hi sir','MSG/13','2016-11-14','04:13:am','client','read'),
+ (14,'BSU/SC/CMP/12/16835','BSU/STDCO/8','john','MSG/14','2016-11-14','04:14:am','counsellor','read'),
+ (15,'BSU/SC/CMP/12/16835','BSU/STDCO/8','john','MSG/15','2016-11-14','04:17:am','counsellor','read'),
+ (16,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hi','MSG/16','2016-11-14','01:23:pm','counsellor','read'),
+ (17,'BSU/SC/CMP/12/16835','BSU/STDCO/8','ok sir','MSG/17','2016-11-15','08:24:am','client','read'),
+ (18,'BSU/SC/CMP/12/16835','BSU/STDCO/8','ho','MSG/18','2016-11-15','09:02:am','counsellor','read');
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (19,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hgghjk','MSG/19','2016-11-15','09:08:am','counsellor','read'),
+ (2,'Bsu/sc/cmp/12/16834','BSU/STDCO/10','hi','MSG/2','2016-11-03','09:45:pm','counsellor','read'),
+ (20,'BSU/SC/CMP/12/16835','BSU/STDCO/8','kddjuke','MSG/20','2016-11-15','09:08:am','counsellor','read'),
+ (21,'BSU/SC/CMP/12/16835','BSU/STDCO/8','jxydgrref','MSG/21','2016-11-15','09:09:am','counsellor','read'),
+ (22,'BSU/SC/CMP/12/16835','BSU/STDCO/8','ua','MSG/22','2016-11-15','09:09:am','counsellor','read'),
+ (23,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','hi sir','MSG/23','2016-11-15','11:24:am','client','read'),
+ (24,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','helo','MSG/24','2016-11-15','11:24:am','counsellor','read'),
+ (25,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','hi','MSG/25','2016-11-15','11:29:am','counsellor','read'),
+ (26,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','hi again','MSG/26','2016-11-15','11:30:am','counsellor','read'),
+ (27,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','hi again','MSG/27','2016-11-15','11:31:am','counsellor','read');
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (28,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','again','MSG/28','2016-11-15','11:31:am','counsellor','read'),
+ (29,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','again','MSG/29','2016-11-15','11:32:am','counsellor','read'),
+ (3,'Bsu/sc/cmp/12/16834','BSU/STDCO/10','helo','MSG/3','2016-11-03','09:45:pm','counsellor','read'),
+ (30,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','again','MSG/30','2016-11-15','11:32:am','counsellor','read'),
+ (31,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','ok sir','MSG/31','2016-11-15','11:33:am','client','read'),
+ (32,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','helo','MSG/32','2016-11-17','11:46:am','counsellor','read'),
+ (33,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','hi sir','MSG/33','2016-11-17','11:56:am','client','read'),
+ (34,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','john john','MSG/34','2016-11-19','02:49:pm','counsellor','read'),
+ (35,'Bsu/sc/cmp/12/16834','BSU/STDCO/8','isama','MSG/35','2016-11-19','02:49:pm','counsellor','read'),
+ (36,'BSU/SC/CMP/12/168319','BSU/STDCO/8','hi pk','MSG/36','2016-11-19','05:03:pm','counsellor','read');
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (37,'BSU/SC/CMP/12/168319','BSU/STDCO/8','helo sir','MSG/37','2016-11-19','05:03:pm','client','read'),
+ (38,'BSU/SC/CMP/12/168319','BSU/STDCO/8','watz up','MSG/38','2016-11-19','05:04:pm','counsellor','read'),
+ (39,'BSU/SC/CMP/12/168319','BSU/STDCO/8','hi','MSG/39','2016-11-20','03:42:am','client','read'),
+ (4,'Bsu/sc/cmp/12/16834','BSU/STDCO/10','counsellor','MSG/4','2016-11-04','10:03:am','client','read'),
+ (40,'BSU/SC/CMP/12/16835','BSU/STDCO/8','sir','MSG/40','2016-11-20','04:29:am','client','read'),
+ (41,'BSU/SC/CMP/12/168319','BSU/STDCO/8','helo','MSG/41','2016-11-20','04:31:am','counsellor','unread'),
+ (42,'BSU/SC/CMP/12/168319','BSU/STDCO/8','hiiiiiiiiiiiiiiiiiiiii','MSG/42','2016-11-20','04:33:am','counsellor','unread'),
+ (43,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hiiiiiiiiiiiiiiiiiii','MSG/43','2016-11-20','04:34:am','counsellor','read'),
+ (44,'BSU/SC/CMP/12/16835','BSU/STDCO/8','wat up/','MSG/44','2016-11-20','09:29:pm','client','read'),
+ (45,'BSU/SC/CMP/12/16888','BSU/STDCO/4','hi','MSG/45','2016-11-20','09:37:pm','client','read');
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (46,'BSU/SC/CMP/12/16888','BSU/STDCO/4','hi sir','MSG/46','2016-11-21','07:19:pm','client','read'),
+ (47,'BSU/SC/CMP/12/16888','BSU/STDCO/4','how are you??','MSG/47','2016-11-21','07:19:pm','counsellor','read'),
+ (48,'BSU/SC/CMP/12/16888','BSU/STDCO/4','good','MSG/48','2016-11-21','07:20:pm','client','read'),
+ (49,'BSU/SC/CMP/12/16888','BSU/STDCO/4','great','MSG/49','2016-11-21','07:22:pm','client','read'),
+ (5,'BSU/SC/CMP/12/16835','BSU/STDCO/1','hi','MSG/5','2016-11-07','03:32:pm','client','read'),
+ (50,'BSU/SC/CMP/12/16888','BSU/STDCO/4','depressed','MSG/50','2016-11-21','07:22:pm','client','read'),
+ (51,'BSU/SC/CMP/12/16888','BSU/STDCO/4','lts work','MSG/51','2016-11-21','07:23:pm','counsellor','read'),
+ (52,'BSU/SC/CMP/12/16888','BSU/STDCO/4','ok great','MSG/52','2016-11-21','07:23:pm','client','read'),
+ (6,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hi\r\n','MSG/6','2016-11-08','03:08:pm','client','read'),
+ (7,'BSU/SC/CMP/12/16835','BSU/STDCO/8','helo','MSG/7','2016-11-08','05:14:pm','client','read');
+INSERT INTO `messages` (`SN`,`clientID`,`counsellorID`,`message`,`messageID`,`date`,`time`,`sender`,`status`) VALUES 
+ (8,'BSU/SC/CMP/12/16835','BSU/STDCO/8','hi','MSG/8','2016-11-08','05:16:pm','client','read'),
+ (9,'BSU/SC/CMP/12/16835','BSU/STDCO/8','mary','MSG/9','2016-11-08','05:34:pm','client','read');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+
+
+--
+-- Definition of table `news_feeds`
+--
+
+DROP TABLE IF EXISTS `news_feeds`;
+CREATE TABLE `news_feeds` (
+  `nFeedID` varchar(50) NOT NULL,
+  `authorID` varchar(45) NOT NULL,
+  `post` text NOT NULL,
+  `date` varchar(45) NOT NULL,
+  `year` varchar(45) NOT NULL,
+  `time` varchar(45) NOT NULL,
+  PRIMARY KEY (`nFeedID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news_feeds`
+--
+
+/*!40000 ALTER TABLE `news_feeds` DISABLE KEYS */;
+INSERT INTO `news_feeds` (`nFeedID`,`authorID`,`post`,`date`,`year`,`time`) VALUES 
+ ('1611190449432','BSU/STDCO/8','There will be......','2016-11-19','2016','04:49:43:pm'),
+ ('1611190547462','BSU/STDCO/8','yes','2016-11-19','2016','05:47:46:pm'),
+ ('1611210714422','BSU/STDCO/4','hello world!','2016-11-21','2016','07:14:42:pm');
+/*!40000 ALTER TABLE `news_feeds` ENABLE KEYS */;
+
+
+--
+-- Definition of table `problems`
+--
+
+DROP TABLE IF EXISTS `problems`;
+CREATE TABLE `problems` (
+  `sn` bigint(20) unsigned NOT NULL,
+  `name` text NOT NULL,
+  `clientID` varchar(45) NOT NULL,
+  `counsellorID` varchar(45) NOT NULL,
+  `month` varchar(45) NOT NULL,
+  `year` year(4) DEFAULT NULL,
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`sn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `problems`
+--
+
+/*!40000 ALTER TABLE `problems` DISABLE KEYS */;
+INSERT INTO `problems` (`sn`,`name`,`clientID`,`counsellorID`,`month`,`year`,`date`) VALUES 
+ (1,'Sleeplessness','BSU/SC/CMP/12/16835','BSU/STDCO/8','10',2016,'2016-10-14'),
+ (2,'Helo','BSU/SC/CMP/12/16835','BSU/STDCO/8','11',2016,'2016-11-14'),
+ (3,'Academic','BSU/SC/CMP/12/16835','BSU/STDCO/8','12',2016,'2016-12-14'),
+ (4,'Sleeee','BSU/SC/CMP/12/16835','BSU/STDCO/8','03',2016,'2016-03-14'),
+ (5,'jsysyjaks','BSU/SC/CMP/12/16835','BSU/STDCO/8','01',2016,'2016-01-14'),
+ (6,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (7,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (8,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (9,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (10,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (11,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (12,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (13,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (14,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15');
+INSERT INTO `problems` (`sn`,`name`,`clientID`,`counsellorID`,`month`,`year`,`date`) VALUES 
+ (15,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (16,'hi','Bsu/sc/cmp/12/16834','BSU/STDCO/8','11',2016,'2016-11-15'),
+ (17,'Sleep','BSU/SC/CMP/12/16888','BSU/STDCO/4','11',2016,'2016-11-15'),
+ (18,'nothing yet','BSU/SC/CMP/12/168319','none yet','11',2016,'2016-11-19');
+/*!40000 ALTER TABLE `problems` ENABLE KEYS */;
+
+
+--
+-- Definition of table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `sn` bigint(20) unsigned NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `id` varchar(45) NOT NULL,
+  PRIMARY KEY (`password`,`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`sn`,`username`,`password`,`id`) VALUES 
+ (5,'admin','admin','admin'),
+ (8,'ag','ag','BSU/SC/CMP/12/16888'),
+ (4,'c10','c10','BSU/STDCO/10'),
+ (7,'c4','c4','BSU/STDCO/4'),
+ (6,'c8','c8','BSU/STDCO/8'),
+ (2,'client1','client1','BSU/SC/CMP/12/16835'),
+ (1,'king','king','BSU/STDCO/1'),
+ (3,'me','me','Bsu/sc/cmp/12/16834'),
+ (9,'unique','unique','BSU/SC/CMP/12/168319');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

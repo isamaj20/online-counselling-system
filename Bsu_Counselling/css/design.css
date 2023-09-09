@@ -1,0 +1,363 @@
+
+.container{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+/*    background-color: #CCC;*/
+    color: #330000;
+    font-size: 20px;
+    box-shadow: -5px 0px 5px #D3D3D3;
+
+/*    text-shadow: 5px 5px 5px  dimgray;*/
+}
+.container form input{
+    border: 1px solid lightblue;
+    border-radius: 0.22em;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-style:  oblique;
+    font-weight:  bolder;
+/*    color:#000;*/
+    width:170px;
+/*    height:30px;*/
+    padding:10px;
+/*    background-color:  #ddd;*/
+/*    background:url(images/login_textbox.png) 0 0 no-repeat;*/
+/*    border:1px  #33C solid;*/
+}
+.title{
+    text-align:center; 
+    font-size: 20px;
+    color:  #333; 
+    background-color:  whitesmoke;
+    height: 26%; 
+    width: 100%;
+     border-radius: 0em 0em 0em 0em;
+     box-shadow: 5px 0px 5px #D3D3D3;
+}
+.title2{ 
+    height: 70%;
+    width: 100%;
+/*    color:  #33C;*/
+    background-color:whitesmoke;
+    font-size: 50px;
+}
+.logo{
+    float: left;
+    width: 15%;
+    height: 100%;
+/*    border: 1px solid red;*/
+}
+.logo2{
+    float: right;
+    width: 85%;
+    height: 50%;
+    font-size: 60px;
+/*    border: 1px solid red;*/
+}
+.home{
+    font-style: normal;
+    text-shadow: none;
+     height:30%; 
+    width: 100%;
+    border-top: 1px solid  wheat;
+    background-color:  #333;
+    border-radius: 0em 0em 0em 0em;
+    
+}
+.home ul li{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 100px; 
+    margin-top: -15px; padding:3px;
+    border-right: 1px white solid;
+}
+.home ul li a{
+    text-decoration: none;
+    color: wheat;   
+}
+.home ul li a:hover{transition: all .5s;
+ background-color: #CCC;
+ width:25%;
+ padding: 1px;
+ padding-bottom: 6px;
+ padding-top: 20px;
+ color: black;
+ border-radius: .5em .5em 0em 0em;
+}
+/**********************************************dropdown****************************************/
+.home ul ul{
+    display: block; opacity:.4; left:-555px;
+    position: absolute;
+    background-color: #CCC;
+/*    border: 1px solid red;*/
+    border-top: 5px;
+    
+    top:auto;
+    /*left: 578px;*/
+    padding-left:5px;
+    padding-right:5px;
+    box-shadow: -5px 5px 5px dimgray;
+/*    width:5%;*/
+}
+.home ul ul li{
+     border-right:none;
+    display:block; 
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-top: 5px;
+}
+.home ul ul li:hover{
+    background-color: #333;
+     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.home ul ul li a{
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 0px;
+    color: black;
+}
+.home ul ul li a:hover{
+     padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 0px;
+    color: white;
+     background-color: #333;
+}
+.home ul li:hover ul{
+    display: block; opacity:1;
+    position: absolute;
+    left: 574px;
+    padding-top:5px;transition: all .5s;
+/*        -webkit-transition:2s ease-in-out 3s;
+-moz-transition:.5s ease-in-out 3s;
+-o-transition:.5s ease-in-out 3s;
+transition:2s ease-in-out 3s;*/
+}
+.sec{ 
+    margin: 0 auto; 
+    height: 70%; 
+     width: 100%; 
+     background-color:  #333;
+     border-radius: 0em 0em 0em 0em;
+     border-top: 1px solid wheat;
+     box-shadow: 5px 0px 5px #D3D3D3;
+}
+.problem{
+    background-color: #EEE;
+    float: left; 
+    height: 100%; 
+    width: 25%;
+    padding: 10px;
+    padding-bottom: 0px;
+  /*  border: 1px red solid;
+    border-left: 1px solid wheat; */
+/*    border-right: 2px dashed #DCDAFF;*/
+}
+.problem ul li a{
+    text-decoration: none;
+    color:  #333;
+}
+.problemMore{
+    height: 5%;
+    width: 100%;
+    background-color:  #333;
+    color: wheat;
+/*    float: right;*/
+}
+.problemMore a{
+    text-decoration: none;
+    color: wheat;
+}
+.problemPic{
+    height: 50%;
+    width: 100%;
+/*    border: 1px green solid;
+    background: url(images/trauma.jpg);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.clickLogin{
+    float: right;
+    height: auto;
+    width: 25%;
+/*    border: 1px red solid;*/
+    color: whitesmoke;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: #333;
+    border-radius: 1em 0em 0em 1em;
+    font-style:normal;
+    font-weight:normal;font-size: large;
+}
+/*.confused{
+    background-color: #333;
+    color:  #333;
+    float: right;
+    height:70%;
+    width: 25%;
+    border: 1px red solid;
+    margin-top: -330px;
+    padding: 5px;
+}*/
+.clickLogin a{
+    text-decoration: none;
+    color:  #CCC;
+}
+.indexMid{
+    width: 44%;
+    height: 99%;
+    float:right;
+/*    border: 1px red solid;*/
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
+    font-size: 16px;
+    font-style:normal;
+    font-weight:normal;
+    text-shadow: 0px 0px 0px  dimgray;
+    color:  #333;
+}
+.talk2Sum1{
+    height: 10%; 
+    background-color:#EEE; 
+    width: 100%;  
+    font-size: 30px; 
+    color:  #333;
+}
+.liveChat{
+    padding-top: 10px; 
+    background-color:#EEE;
+    height: 18%;
+    width: 100%;
+    color:  #333;
+    border-bottom: 1px dashed burlywood;
+}
+.liveChat a{
+  text-decoration:none;
+    color: #A2A1F3;
+    font-size: 20px;
+    /*    background-color:  #663300;*/
+}
+.messageCounsellor{
+    padding-top: 10px; 
+    background-color:#EEE;
+    height: 18%;
+    width: 100%;
+    color:  #333;
+    border-bottom: 1px dashed burlywood;
+}
+.messageCounsellor a{
+  text-decoration:none;
+    color: #A2A1F3;
+     font-size: 20px;
+}
+.forum{
+  padding-top: 10px; 
+    background-color:#EEE;
+    height: 18%;
+    width: 100%;
+    color:  #333;
+    border-bottom: 1px dashed burlywood;   
+}
+.forum a{
+    text-decoration:none;
+    color: #A2A1F3;
+     font-size: 20px;
+}
+.counsel{
+    float: left; 
+    height: 100%; 
+    width: 25%;
+}
+.login{
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-top: 50px;
+    text-shadow:none;  
+    color:whitesmoke;
+}
+.login form table{
+    font-size: 20px;
+}
+.loginUser{
+border:#000 1px dashed; height:auto; color:  red; width:60%; font-size: 25px; padding: 10px; border-radius: 2em 0em 2em 0em;
+}
+.sec2{
+    float: right; 
+    height: 100%; 
+    width: 75%; border-radius: 0em 0em 0em 0.6em;
+/*    border: 1px solid red; */
+    background-color:whitesmoke;
+    border-top: 1px solid wheat;
+    box-shadow: -5px 0px 5px #D3D3D3;
+}
+.sec2 form table{ 
+    height: 80%; 
+    width: 90%;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.sec2 form input{
+    background-color:  #D3D3D3;
+}
+.notify{
+    height: 97%;
+    width: 50%;
+/*    border: 1px solid red;*/
+    float: left;
+}
+.notification{
+    padding: 10px;
+    padding-top:0px; 
+    background-color:#EEE;
+    height: 18%;
+    width: 80%;
+    color:  #333;
+    border-bottom: 1px dashed burlywood;
+    text-shadow:none;
+}
+.notification a{
+    text-decoration:none;
+    color: darkgreen;
+     font-size: 20px;
+    /*    background-color:  #663300;*/
+} 
+/*.notify2{
+    height: 97%;
+    width: 50%;
+    border: 1px solid red;
+}*/
+.client_actions{
+    padding: 10px;
+    text-shadow: none;
+    height:100%;
+    width: 20%;
+    float: right;
+    background-color:  #CCC;
+    border-radius: 2em 0em 0em 2em;
+}
+.client_actions a{
+    text-decoration: underline;
+    color:black;
+    padding-left: 10px;
+}
+.foot{
+    padding-top: 10px;
+    height: 10%;
+    width: 100%;
+    border-top: 1px solid  #333;
+}
+/*@media only screen and (max-width:400px) {
+     For mobile phones: 
+    [class*="col-"] {
+        width: 100%;
+    }
+}*/
