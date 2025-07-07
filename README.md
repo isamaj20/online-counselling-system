@@ -31,4 +31,25 @@ A web-based counselling platform built with PHP and MySQL. Designed for student-
 2. Install [XAMPP / Apache](https://www.apachefriends.org/) and setup MySQL database
 
 
-3. Import `project_db` from `/db`folder 
+3. Import the Database
+
+   - Go to http://localhost/phpmyadmin
+
+   - Click "New", create a new database (e.g., my_project)
+
+   - Click the database name, then go to the Import tab
+
+   - Import `project_db` from `/db`folder and click Go
+   
+
+4. Update DB Connection in PHP
+   - Go to `/php` and update `DBConnect.php`
+   Update this lines:
+   ```bash
+    $host="localhost";
+    $user="root";
+    $password="your-db-password";//or leave blank if no password
+    $dbName="your-db-name"; //database name you created
+
+    
+5. Go to `http://localhost:8000/`

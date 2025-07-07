@@ -7,7 +7,7 @@
  */
 $host="localhost";
 $user="root";
-$password="adeyi";
-$dbName="bsu_counselling";
+$password="your-db-password";//or leave blank if no password
+$dbName="your-db-name"; //database name you created
 $mysqli= new mysqli($host,$user,$password, $dbName);
 //mysqli_select_db($con,$dbName);
