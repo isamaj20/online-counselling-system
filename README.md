@@ -30,7 +30,9 @@ A web-based counselling platform built with PHP and MySQL. Designed for student-
 ## Screenshots
 
 *check `/screenshots` folder for all Screenshots*  
-[Link](/screenshots)
+ - [Login page](/Screenshots/Home%20(login).png)
+ - [Client Page](/Screenshots/client%20page.png)
+ - [Signup Page](/Screenshots/signup%20page.png)
 
 ##  Setup Instructions
 
