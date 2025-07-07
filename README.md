@@ -17,10 +17,20 @@ A web-based counselling platform built with PHP and MySQL. Designed for student-
 - HTML5 / CSS3
 - XAMPP / Apache
 
-##  Screenshots
+## Folder Structure
 
-> *check `/screenshots` folder for all Screenshots*  
-> [Link](/screenshots)
+
+    ```bash
+     /css           - css files 
+     /db            - Database sql dump  
+     /images        - users images, icons etc  
+     /php           - php files  
+     /Screenshots   - png Screenshots of the application interface
+
+## Screenshots
+
+*check `/screenshots` folder for all Screenshots*  
+[Link](/screenshots)
 
 ##  Setup Instructions
 
@@ -52,4 +62,13 @@ A web-based counselling platform built with PHP and MySQL. Designed for student-
     $dbName="your-db-name"; //database name you created
 
     
-5. Go to `http://localhost:8000/`
+5. Launch via XAMPP or local server and visit `http://localhost/online-counselling-system`
+
+
+## License
+
+This project was developed for academic and demonstration purposes.
+Feel free to fork or adapt it with attribution.
+
+## Author
+John Isama – [LinkedIn](https://www.linkedin.com/in/isama-john-adeyi/) | [GitHub](https://github.com/isamaj20/)
